@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detaily</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{ character?.name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-card>
+      <img src="{{ character?.thumbnail?.path }}.{{ character?.thumbnail?.extension }}" alt="{{ character?.name }}"/>
+      <ion-card-content>
+        <p>{{ character?.description || 'No description available' }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-list>
+      <ion-list-header>
+        Comics
+      </ion-list-header>
+      <ion-item *ngFor="let comic of character?.comics?.items">
+        {{ comic.name }}
+      </ion-item>
+    </ion-list>
+
+
+  </ion-content>
+
+
+
+</ion-content>

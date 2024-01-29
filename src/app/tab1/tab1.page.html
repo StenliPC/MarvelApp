@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Hrdinové</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full" style="margin-top: 20px;">
+    <ion-item *ngFor="let character of characters?.data?.results" (click)="openCharacterDetails(character)">
+      <ion-avatar slot="start">
+        <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension"/>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ character.name }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Stories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Stories</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Vstupy pro filtry -->
+  <ion-item>
+    <ion-label position="floating">Search by title</ion-label>
+    <ion-input type="text" [(ngModel)]="filters.title" (ngModelChange)="updateFilters('title', $event)"></ion-input>
+  </ion-item>
+  <!-- Další filtry, jako například select boxy pro characters, creators, atd. -->
+  <!-- Tlačítko pro resetování filtrů, pokud je potřeba -->
+
+  <!-- Výpis příběhů -->
+  <ion-list>
+    <ion-item *ngFor="let story of stories" (click)="openStoryDetails(story)">
+      <ion-label>
+        <h2>{{ story.title }}</h2>
+        <p>{{ story.description }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <img style="max-height: 25px; margin-right: 10px;" src="assets/icon/news.png"/>
+    </ion-title>
+
+
+  </ion-toolbar>
+
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Zprávy</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-title style="margin-top: 20px; margin-bottom: 20px;"></ion-title>
+
+  <!-- Sekce pro zobrazení filtrovaných výsledků vyhledávání -->
+
+
+  <!-- Sekce pro zobrazení hlavních zpráv -->
+
+
+
+</ion-content>
